@@ -1,28 +1,39 @@
 // ************************************************************************** //
 //                                                                            //
 //                                                        :::      ::::::::   //
-//   Point.hpp                                          :+:      :+:    :+:   //
+//   Bsp.cpp                                            :+:      :+:    :+:   //
 //                                                    +:+ +:+         +:+     //
 //   By: weast <weast@student.42berlin.de>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
-//   Created: 2025/09/03 18:22:19 by weast             #+#    #+#             //
-//   Updated: 2025/09/03 18:56:56 by weast            ###   ########.fr       //
+//   Created: 2025/09/03 19:01:18 by weast             #+#    #+#             //
+//   Updated: 2025/09/03 19:15:23 by weast            ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
-#include "Fixed.hpp"
+#include "Bsp.hpp"
 
-class Point
+
+Bsp::Bsp() {}
+
+Bsp::Bsp(Point a, Point b, Point c) : a(a), b(b), c(c) {
+    this->area =
+		(a.x * (b.y - c.y)
+		 + b.x * (c.y - a.y)
+		 + c.x * (a.y - b.y)) / 2;
+}
+
+Bsp::~Bsp() {}
+
+Bsp::Bsp(Point &copy) { (void)copy; }
+
+Bsp &Bsp::operator=(const Bsp &assignor)
 {
-	public:
-		Fixed x;
-		Fixed y;
+	if (this != &assignor)
+	{
+		this->a = assignor.a;
+		this->b = assignor.b;
+		this->c = assignor.c;
+	}
 
-	// construction
-// ************************************************************************** //
-	Point();
-	Point(Fixed x, Fixed y);
-	~Point();
-	Point(Point &copy);
-	Point &operator=(const Point &assignor);
-};
+	return *this;
+}

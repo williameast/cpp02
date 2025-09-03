@@ -1,28 +1,37 @@
 // ************************************************************************** //
 //                                                                            //
 //                                                        :::      ::::::::   //
-//   Point.hpp                                          :+:      :+:    :+:   //
+//   bsp.hpp                                            :+:      :+:    :+:   //
 //                                                    +:+ +:+         +:+     //
 //   By: weast <weast@student.42berlin.de>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
-//   Created: 2025/09/03 18:22:19 by weast             #+#    #+#             //
-//   Updated: 2025/09/03 18:56:56 by weast            ###   ########.fr       //
+//   Created: 2025/09/03 18:56:36 by weast             #+#    #+#             //
+//   Updated: 2025/09/03 19:09:37 by weast            ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
-#include "Fixed.hpp"
+#ifndef BSP_H
+#define BSP_H
 
-class Point
+#include "Point.hpp"
+
+class Bsp
 {
-	public:
-		Fixed x;
-		Fixed y;
 
-	// construction
-// ************************************************************************** //
-	Point();
-	Point(Fixed x, Fixed y);
-	~Point();
-	Point(Point &copy);
-	Point &operator=(const Point &assignor);
+	public:
+		Point a;
+		Point b;
+		Point c;
+		Fixed area;
+
+	Bsp();
+	Bsp(Point a, Point b, Point c);
+	~Bsp();
+	Bsp(Point &copy);
+	Bsp &operator=(const Bsp &assignor);
 };
+
+
+
+
+#endif // BSP_H
