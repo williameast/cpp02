@@ -14,8 +14,8 @@ NAME = bin/bsp
 SRCDIR = src
 INCDIR = include
 OBJDIR = obj
-HEADERS = $(INCDIR)/Fixed.hpp $(INCDIR)/Point.hpp 
-SRC = $(SRCDIR)/main.cpp $(SRCDIR)/Fixed.cpp $(SRCDIR)/Point.cpp
+HEADERS = $(wildcard $(INCDIR)/*.hpp)
+SRC = $(wildcard $(SRCDIR)/*.cpp)
 OBJ = $(SRC:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
 CPP = c++
 FLAGS = -Wall -Wextra -Werror --std=c++98 -I$(INCDIR)
