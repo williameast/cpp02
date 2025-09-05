@@ -6,7 +6,7 @@
 //   By: weast <weast@student.42berlin.de>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2025/09/03 18:56:36 by weast             #+#    #+#             //
-//   Updated: 2025/09/03 19:09:37 by weast            ###   ########.fr       //
+//   Updated: 2025/09/05 15:40:18 by weast            ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -15,7 +15,7 @@
 
 #include "Point.hpp"
 
-class Bsp
+class Triangle
 {
 
 	public:
@@ -24,14 +24,14 @@ class Bsp
 		Point c;
 		Fixed area;
 
-	Bsp();
-	Bsp(Point a, Point b, Point c);
-	~Bsp();
-	Bsp(Point &copy);
-	Bsp &operator=(const Bsp &assignor);
+	Triangle();
+	Triangle(Point a, Point b, Point c);
+	~Triangle();
+	Triangle(Point &copy);
+	Triangle &operator=(const Triangle &assignor);
+
+	bool encapsulates(Point &p, bool includeEdges = false);
+
 };
-
-
-
 
 #endif // BSP_H

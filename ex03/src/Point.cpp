@@ -6,7 +6,7 @@
 //   By: weast <weast@student.42berlin.de>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2025/09/03 18:29:12 by weast             #+#    #+#             //
-//   Updated: 2025/09/03 18:43:35 by weast            ###   ########.fr       //
+//   Updated: 2025/09/05 15:23:54 by weast            ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -35,3 +35,8 @@ Point &Point::operator=(const Point &assignor) {
 // destructor;
 Point::~Point() {}
 
+std::ostream& operator<<(std::ostream& stream, const Point &point)
+{
+	stream << "(" << point.x << ", " << point.y << ")";
+	return stream;
+}

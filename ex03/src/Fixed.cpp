@@ -6,7 +6,7 @@
 //   By: weast <weast@student.42berlin.de>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2025/09/03 14:43:34 by weast             #+#    #+#             //
-//   Updated: 2025/09/03 19:23:59 by weast            ###   ########.fr       //
+//   Updated: 2025/09/05 15:31:06 by weast            ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -148,13 +148,13 @@ int Fixed::toInt(void) const
 // ************************************************************************** //
 int Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
+	// std::cout << "getRawBits member function called" << std::endl;
 	return (this->_literal_int);
 }
 
 void Fixed::setRawBits(int const raw)
 {
-	std::cout << "setRawBits member function called" << std::endl;
+	// std::cout << "setRawBits member function called" << std::endl;
 	this->_literal_int = raw;
 }
 
