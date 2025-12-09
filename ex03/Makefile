@@ -6,7 +6,7 @@
 #    By: weast <weast@student.42berlin.de>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/14 10:31:24 by weast             #+#    #+#              #
-#    Updated: 2025/09/03 19:21:21 by weast            ###   ########.fr        #
+#    Updated: 2025/09/08 10:31:37 by weast            ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -14,8 +14,8 @@ NAME = bin/bsp
 SRCDIR = src
 INCDIR = include
 OBJDIR = obj
-HEADERS = $(wildcard $(INCDIR)/*.hpp)
-SRC = $(wildcard $(SRCDIR)/*.cpp)
+HEADERS = $(addprefix $(INCDIR)/, Bsp.hpp Fixed.hpp Point.hpp)
+SRC = $(addprefix $(SRCDIR)/, Bsp.cpp Fixed.cpp main.cpp Point.cpp)
 OBJ = $(SRC:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
 CPP = c++
 FLAGS = -Wall -Wextra -Werror --std=c++98 -I$(INCDIR)

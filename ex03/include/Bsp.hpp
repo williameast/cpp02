@@ -6,7 +6,7 @@
 //   By: weast <weast@student.42berlin.de>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2025/09/03 18:56:36 by weast             #+#    #+#             //
-//   Updated: 2025/09/05 15:40:18 by weast            ###   ########.fr       //
+//   Updated: 2025/09/08 10:43:02 by weast            ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -27,7 +27,7 @@ class Triangle
 	Triangle();
 	Triangle(Point a, Point b, Point c);
 	~Triangle();
-	Triangle(Point &copy);
+	Triangle(Triangle &copy);
 	Triangle &operator=(const Triangle &assignor);
 
 	bool encapsulates(Point &p, bool includeEdges = false);

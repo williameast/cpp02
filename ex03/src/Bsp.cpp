@@ -6,7 +6,7 @@
 //   By: weast <weast@student.42berlin.de>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2025/09/03 19:01:18 by weast             #+#    #+#             //
-//   Updated: 2025/09/05 15:39:43 by weast            ###   ########.fr       //
+//   Updated: 2025/09/08 10:45:48 by weast            ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -29,7 +29,9 @@ Triangle::Triangle(Point a, Point b, Point c) : a(a), b(b), c(c)
 
 Triangle::~Triangle() {}
 
-Triangle::Triangle(Point &copy) { (void)copy; }
+Triangle::Triangle(Triangle &copy) : a(copy.a), b(copy.b), c(copy.c), area(copy.area)
+{ }
+
 
 Triangle &Triangle::operator=(const Triangle &assignor)
 {
